@@ -1,0 +1,17 @@
+.container-home {
+  padding: 50px; /* desktop por defecto */
+}
+
+/* Tablet (ejemplo: <= 768px) */
+@media (max-width: 768px) {
+  .container-home {
+    padding: 20px;
+  }
+}
+
+/* Celular (ejemplo: <= 480px) */
+@media (max-width: 480px) {
+  .container-home {
+    padding: 12px;
+  }
+}
