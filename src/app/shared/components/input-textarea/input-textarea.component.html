@@ -1,0 +1,24 @@
+ <mat-form-field appearance="outline" class="w-full">
+      <mat-label>{{ props.label }}</mat-label>
+      <textarea
+        matInput
+        [rows]="props.rows || 3"
+        [placeholder]="props.placeholder || ''"
+        [formControl]="formControl">
+      </textarea>
+
+<!-- mensajes de error -->
+@if(formControl.invalid && (formControl.touched || formControl.dirty)){
+  <mat-error>
+    @for (validattion of props.validations; track $index) {
+      <ng-container>
+        @if(formControl.hasError(validattion.name)){
+          <span>
+            {{ validattion.message }}
+          </span>
+        }
+      </ng-container>
+    }
+  </mat-error>
+}
+</mat-form-field>

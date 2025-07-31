@@ -1,0 +1,30 @@
+<div class="container-login">
+
+    <form [formGroup]="form" markAllSubmit (validSubmit)="existUser()">
+        <div class="form-container">
+            <div fxLayout="row wrap">
+               <div class="mb-2" fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+                  <img  ngSrc="assets/images/logo-atom.png" alt="Logo" width="180" height="60" >
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+                    <h1>Iniciar sesión</h1>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100%">
+                    <h5 style="color: rgb(141, 141, 141);">Ingrese su correo electrónico</h5>
+                </div>
+                @for (fieldValue of createMeetingSchema; track fieldValue.name) {
+                    <app-text-field
+                        [form]="form"
+                        [fieldValue]="fieldValue"
+                        [fxFlex]="fieldValue.df"
+                        [fxFlex.xs]="fieldValue.xs"
+                        [fxFlex.sm]="fieldValue.sm"
+                    ></app-text-field>
+                }
+            </div>
+
+        <button type="submit" style="width: 100%;
+              margin-top: 10px;" mat-flat-button color="primary" [disabled]="!this.form.valid">Ingresar</button>
+        </div>
+    </form>
+</div>

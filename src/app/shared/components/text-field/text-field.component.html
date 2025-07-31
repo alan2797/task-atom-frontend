@@ -1,0 +1,66 @@
+<ng-container [ngSwitch]="fieldValue.fieldType" [formGroup]="form">
+  <mat-form-field
+    *ngSwitchCase="TextFieldType.Dropdown"
+    appearance="outline"
+    [class]="class!"
+    [ngClass]="{ 'full-width': fieldValue.fullWidth ?? true }"
+  >
+    <mat-label>{{ fieldValue.label }}</mat-label>
+    <mat-select
+      [formControlName]="fieldValue.name"
+      [multiple]="fieldValue.multiple"
+    >
+      <mat-option
+        *ngFor="let option of fieldValue.options"
+        [value]="option.value"
+        >{{ option.label }}</mat-option
+      >
+    </mat-select>
+    @for (error of fieldValue.validators; track error.name) {
+    <mat-error *ngIf="control?.hasError(error.name)">
+      {{ error.message }}
+    </mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field
+    *ngSwitchCase="TextFieldType.Textarea"
+    appearance="outline"
+    [class]="class!"
+    [ngClass]="{ 'full-width': fieldValue.fullWidth ?? true }"
+  >
+    <mat-label>{{ fieldValue.label }}</mat-label>
+    <textarea
+      [style.min-height.rem]="fieldValue.minRows"
+      [style.max-height.rem]="fieldValue.maxRows"
+      matInput
+      [type]="fieldValue.type!"
+      [formControlName]="fieldValue.name"
+      [readonly]="fieldValue.readOnly"
+    ></textarea>
+    @for (error of fieldValue.validators; track error.name) {
+    <mat-error *ngIf="control?.hasError(error.name)">
+      {{ error.message }}
+    </mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field
+    *ngSwitchDefault
+    appearance="outline"
+    [class]="class!"
+    [ngClass]="{ 'full-width': fieldValue.fullWidth ?? true }"
+  >
+    <mat-label>{{ fieldValue.label }}</mat-label>
+    <input
+      matInput
+      [type]="fieldValue.type!"
+      [formControlName]="fieldValue.name"
+      [readonly]="fieldValue.readOnly"
+    />
+    <mat-icon matPrefix *ngIf="fieldValue.icon">{{ fieldValue.icon }}</mat-icon>
+    @for (error of fieldValue.validators; track error.name) {
+    <mat-error *ngIf="control?.hasError(error.name)">
+      {{ error.message }}
+    </mat-error>
+    }
+  </mat-form-field>
+</ng-container>

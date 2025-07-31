@@ -1,0 +1,30 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$primary: mat.define-palette(mat.$orange-palette, 800);
+$accent: mat.define-palette(mat.$gray-palette, 700);
+$warn: mat.define-palette(mat.$red-palette, 900);
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+$primary-main: mat.get-color-from-palette($primary, "default");
+$primary-darker: mat.get-color-from-palette($primary, "darker");
+$primary-lighter: mat.get-color-from-palette($primary, "lighter");
+
+@include mat.all-component-themes($light-theme);
+
+@include mat.form-field-density(-3);
+
+  .mdc-icon-button-icon-size{
+    font-size: 20px;
+  }
+  .mat-mdc-form-field-icon-suffix{
+    height: 39px !important;
+    margin-top: -6px;
+  }

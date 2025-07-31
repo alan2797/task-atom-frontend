@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <!-- Logo y Título (izquierda) -->
+  <div class="toolbar-left">
+    <img  ngSrc="assets/images/logo-atom.png" alt="Logo" width="100" height="30" >
+  </div>
+
+  <!-- Espacio flexible -->
+  <span class="toolbar-spacer"></span>
+
+  <!-- Acciones (derecha) -->
+  <div>
+    <h4>{{correo}} |</h4>
+  </div>
+  <div class="toolbar-actions">
+    <button mat-icon-button matTooltip="cerrar sesión" (click)="cerrarSesion()">
+      <mat-icon >logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

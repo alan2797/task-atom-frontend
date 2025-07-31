@@ -1,0 +1,11 @@
+.full-width {
+  width: 100%;
+}
+.search-tool ::ng-deep > span{
+  padding-top: 0.5rem !important;
+}
+:host {
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper{
+    padding:  0 !important;
+}
+} 

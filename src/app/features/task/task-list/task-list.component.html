@@ -1,0 +1,27 @@
+    <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+    <app-title-bar [title]="title">
+    <a mat-flat-button color="primary" [routerLink]="pageRoute.TASK.CREATE">
+        Nuevo
+    </a>
+    </app-title-bar>
+
+<app-data-table
+  [showSearcher]="true"
+  [rows]="tasks"
+  [columns]="taskColumns"
+  (refresh)="refresh()"
+>
+  <ng-template customColumn="estado" let-value="value">
+    <div [class]="value.estado == 'Pendiente' ? 'chip-estado-warn' : 'chip-estado'" >
+        {{value.estado}}
+    </div>
+  </ng-template>
+  <ng-template customColumn="actions" let-value="value">
+    <button mat-icon-button (click)="goEdit(value)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="showDialogConfirm(value)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </ng-template>
+</app-data-table>

@@ -1,0 +1,14 @@
+<!-- mensajes de error -->
+@if(formControl.invalid && (formControl.touched || formControl.dirty)){
+  <mat-error>
+    @for (validattion of validations; track $index) {
+      <ng-container>
+        @if(formControl.hasError(validattion.name)){
+          <span>
+            {{ validattion.message }}
+          </span>
+        }
+      </ng-container>
+    }
+  </mat-error>
+}

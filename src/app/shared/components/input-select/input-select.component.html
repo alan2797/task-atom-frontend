@@ -1,0 +1,25 @@
+<mat-form-field appearance="outline" class="w-full">
+      <mat-label>{{ props.label }}</mat-label>
+      <mat-select [formControl]="formControl">
+        @for (opt of props.options; track $index) {
+          <mat-option [value]="opt">
+            {{ opt }}
+          </mat-option>
+        }
+
+      </mat-select>
+<!-- mensajes de error -->
+@if(formControl.invalid && (formControl.touched || formControl.dirty)){
+  <mat-error>
+    @for (validattion of props.validations; track $index) {
+      <ng-container>
+        @if(formControl.hasError(validattion.name)){
+          <span>
+            {{ validattion.message }}
+          </span>
+        }
+      </ng-container>
+    }
+  </mat-error>
+}
+    </mat-form-field>

@@ -1,0 +1,23 @@
+<div style="padding: 12px;">
+<h2 matDialogTitle>Editar Tarea</h2>
+<mat-dialog-content class="pt-4" style="padding-top: 10px;">
+    <form id="taskForm" [formGroup]="form" markAllSubmit (validSubmit)="onClickEdit()">
+      <div fxLayout="row wrap" fxLayoutGap="16px 4px">
+        @for (fieldValue of createTaskSchema; track fieldValue.name) {
+        <app-text-field
+          [form]="form"
+          [fieldValue]="fieldValue"
+          [fxFlex]="fieldValue.df"
+          [fxFlex.xs]="fieldValue.xs"
+          [fxFlex.sm]="fieldValue.sm"
+        ></app-text-field>
+        }
+      </div>
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" type="submit" form="taskForm">Editar</button>
+</mat-dialog-actions>
+</div>

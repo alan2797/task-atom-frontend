@@ -1,0 +1,22 @@
+<app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+<app-title-bar [title]="title">
+        <button mat-stroked-button color="default" (click)="goBack()">Volver</button>
+</app-title-bar>
+<form [formGroup]="form" markAllSubmit (validSubmit)="onClickSave()">
+  <app-simple-card>
+    <div fxLayout="row wrap" fxLayoutGap="16px 4px">
+      @for (fieldValue of createTaskSchema; track fieldValue.name) {
+      <app-text-field
+        [form]="form"
+        [fieldValue]="fieldValue"
+        [fxFlex]="fieldValue.df"
+        [fxFlex.xs]="fieldValue.xs"
+        [fxFlex.sm]="fieldValue.sm"
+      ></app-text-field>
+      }
+    </div>
+  </app-simple-card>
+  <div class="mt-1">
+    <button mat-flat-button color="primary" type="submit">Guardar</button>
+  </div>
+</form>

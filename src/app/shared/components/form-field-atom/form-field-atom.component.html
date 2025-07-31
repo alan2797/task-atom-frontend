@@ -1,0 +1,19 @@
+<ng-container [ngSwitch]="field.type">
+  <app-input-text
+    *ngSwitchCase="'text'"
+    [formControl]="control"
+    [props]="field">
+  </app-input-text>
+
+  <app-input-textarea
+    *ngSwitchCase="'textarea'"
+    [formControl]="control"
+    [props]="field">
+  </app-input-textarea>
+
+  <app-input-select
+    *ngSwitchCase="'select'"
+    [formControl]="control"
+    [props]="field">
+  </app-input-select>
+</ng-container>

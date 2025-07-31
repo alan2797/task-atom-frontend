@@ -1,0 +1,13 @@
+mat-card-header ::ng-deep > .mat-card-header-text {
+  margin: 0 0;
+}
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+// mat-card-content {
+//   margin-bottom: 16px;
+// }
+:host {
+  display: block;
+}

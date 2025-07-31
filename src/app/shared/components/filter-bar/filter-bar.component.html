@@ -1,0 +1,23 @@
+<app-simple-card
+  [isLoading]="false"
+  [style]="{ 'margin-bottom': marginButtom }"
+>
+  <form [formGroup]="form" markAllSubmit (validSubmit)="onFilter()">
+    <div fxLayout="row wrap" fxLayoutGap="16px 4px">
+      @for (fieldValue of filterSchema; track fieldValue.name) {
+      <app-text-field
+        [fieldValue]="fieldValue"
+        [form]="form"
+        [fxFlex]="fieldValue.df"
+        [fxFlex.xs]="fieldValue.xs"
+        [fxFlex.sm]="fieldValue.sm"
+        [fxFlex.md]="fieldValue.md"
+        [fxFlex.lg]="fieldValue.lg"
+      ></app-text-field>
+      }
+      <div fxFlex="auto" class="ml-auto mt-1">
+        <button mat-flat-button color="primary">{{ textButton }}</button>
+      </div>
+    </div>
+  </form>
+</app-simple-card>
