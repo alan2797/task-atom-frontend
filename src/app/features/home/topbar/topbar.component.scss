@@ -3,3 +3,22 @@
 .toolbar-spacer {
   flex: 1 1 auto;
 }
+
+.usuario-login{
+  font-size: 20px;
+}
+
+
+/* Tablet (ejemplo: <= 768px) */
+@media (max-width: 768px) {
+ .usuario-login{
+    font-size: 17px;
+  }
+}
+
+/* Celular (ejemplo: <= 480px) */
+@media (max-width: 480px) {
+.usuario-login{
+  font-size: 14px;
+}
+}
