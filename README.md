@@ -2,6 +2,70 @@
 
 Este proyecto es una aplicación escalable desarrollada con Angular 17.3.0, diseñada para el desafío técnico de Atom. Implementa un sistema de gestión de tareas moderno y seguro, con autenticación robusta de usuarios y una interfaz responsiva, optimizada para una experiencia de usuario fluida y eficiente.
 
+## Deciciones De Desarrollo
+
+- Como primer paso siempre me encargo de desarrollar loc componentes que voy a necesitar en la aplicacion como:
+  text-field (este componente se encarga de renderizar el tipo de componente de mi formulario) y asi con otros componentes
+- Como segundo paso voy viendo el renderizado de mis formularios en base a un archivo de configuracions como el siguiente:
+
+```
+export const createTaskSchema: TextFieldSchema = [
+  {
+    label: 'Tipo/Categoria',
+    name: 'tipo',
+    fieldType: TextFieldType.Dropdown,
+    options: [
+      { label: 'Practico', value: 'Practico' },
+      { label: 'Trabajo', value: 'Trabajo' },
+      { label: 'Proyecto', value: 'Proyecto' },
+      { label: 'Informe', value: 'Informe' },
+      { label: 'Laboratorio', value: 'Laboratorio' },
+    ],
+    validators: [
+      {
+        message: 'Es requerido',
+        name: 'required',
+        validatorFn: Validators.required,
+      },
+    ],
+    df: '20%',
+    xs: '100%',
+    sm: '50%',
+  },
+  {
+    label: 'Titulo',
+    name: 'titulo',
+    validators: [
+      {
+        message: 'Es requerido',
+        name: 'required',
+        validatorFn: Validators.required,
+      },
+    ],
+    df: '20%',
+    xs: '100%',
+    sm: '50%',
+  },
+  {
+    label: 'Descripcion',
+    name: 'descripcion',
+    fieldType: TextFieldType.Textarea,
+    validators: [
+      {
+        message: 'Es requerido',
+        name: 'required',
+        validatorFn: Validators.required,
+      },
+    ],
+    df: '20%',
+    xs: '100%',
+    sm: '50%',
+  },
+];
+```
+
+- esos son algunas consideracion para tener la base del proyecto, antes de iniciar con las funcionalidades, en el codigo ya se podra apreciar a mas detalle.
+
 ## Estructura del Proyecto
 
 ```
