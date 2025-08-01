@@ -8,10 +8,10 @@
   <span class="toolbar-spacer"></span>
 
   <!-- Acciones (derecha) -->
-  <div>
-    <h4 class="usuario-login">{{correo}} |</h4>
-  </div>
   <div class="toolbar-actions">
+    <button mat-icon-button [matTooltip]="correo">
+      <mat-icon>person</mat-icon>
+    </button>
     <button mat-icon-button matTooltip="cerrar sesión" (click)="cerrarSesion()">
       <mat-icon >logout</mat-icon>
     </button>

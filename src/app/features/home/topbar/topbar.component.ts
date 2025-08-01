@@ -36,7 +36,6 @@ export class TopbarComponent {
   constructor(public dialog: MatDialog, private router: Router) {}
 
   ngOnInit(): void {
-    const token = sessionStorage.getItem('token');
     this.leerToken();
   }
 
