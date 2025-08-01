@@ -39,9 +39,7 @@ export class TaskEditComponent {
     private _handlerHttpService: HandlerHttpService,
     private dialogRef: MatDialogRef<TaskEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: TaskModel
-  ) {
-    console.log('data: ', this.data);
-  }
+  ) {}
 
   ngOnInit(): void {
     this.form.patchValue({
@@ -50,7 +48,6 @@ export class TaskEditComponent {
   }
 
   async onClickEdit() {
-    console.log(this.form.value);
     const response = await this._handlerHttpService.handleRequest(
       () => this._taskService.edit(this.data.id, this.form.value),
       true,

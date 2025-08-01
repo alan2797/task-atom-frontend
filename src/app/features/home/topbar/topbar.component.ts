@@ -62,7 +62,6 @@ export class TopbarComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log('Usuario presionó "Aceptar"');
         sessionStorage.removeItem('token');
         this.router.navigate(['auth/login']);
       }

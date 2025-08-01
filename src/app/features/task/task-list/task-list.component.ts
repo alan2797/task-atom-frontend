@@ -92,7 +92,6 @@ export class TaskListComponent {
   }
 
   async remove(value: TaskModel) {
-    console.log(value);
     const response = await this._handlerHttpService.handleRequest(
       () => this._taskService.remove(value.id),
       true,

@@ -23,8 +23,5 @@ export class InputTextComponent {
   @Input() props!: any;
   @Input() formControl!: FormControl;
 
-  ngOnInit() {
-    console.log('formControl recibido', this.props);
-    console.log('formControl recibido', this.formControl);
-  }
+  ngOnInit() {}
 }

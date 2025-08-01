@@ -21,7 +21,5 @@ import { FieldErrorsComponent } from '../field-errors/field-errors.component';
 export class InputTextareaComponent {
   @Input() props!: any;
   @Input() formControl!: FormControl;
-  ngOnInit() {
-    console.log('formControl recibido', this.formControl);
-  }
+  ngOnInit() {}
 }

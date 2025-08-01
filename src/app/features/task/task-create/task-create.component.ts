@@ -68,7 +68,6 @@ export class TaskCreateComponent {
   }
 
   async save() {
-    console.log('llego a guardar la informacion confirmada');
     const response = await this._handlerHttpService.handleRequest(
       () => this._taskService.create(this.form.value),
       true,
