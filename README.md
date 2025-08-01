@@ -191,12 +191,8 @@ La aplicación está configurada para un fácil despliegue en Firebase:
 El proyecto sigue una arquitectura modular con clara separación de responsabilidades:
 
 - **Módulo Core**: Contiene servicios, interceptores y guards que se cargan una sola vez
-- **Módulo Compartido**: Contiene componentes, directivas y pipes reutilizables
-- **Módulos de Características**: Módulos de gestión de tareas y autenticación con sus propios componentes
-
-### Gestión de Estado
-
-La aplicación utiliza BehaviorSubjects de RxJS para una gestión simple del estado, lo cual es suficiente para este tamaño de aplicación, evitando la complejidad de bibliotecas adicionales de gestión de estado.
+- **Módulo shared**: Contiene componentes, directivas y pipes reutilizables
+- **Módulos de features**: Módulos de gestión de tareas y autenticación con sus propios componentes
 
 ### Integración con API
 
